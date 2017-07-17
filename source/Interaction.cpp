@@ -1,5 +1,5 @@
-#include "stdafx.h"
 #include "Interaction.h"
+#include "stdafx.h"
 #include <iostream>
 #include <fstream>
 #include <vector>
