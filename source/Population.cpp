@@ -10,7 +10,7 @@
 #include <fstream>
 #include <ctime>
 #include <cassert>
-
+#include <vector>
 
 using namespace std;
 
@@ -169,139 +169,6 @@ void Population::print_chromosome(vector<Population::_case> _chromosome)
 	}
 	cout << endl;
 }
-
-
-
-
-/*
-
-
-double Population::get_fitness_score(void) {
-
-	// default fitness score set to be -1
-	double fScore = -1.0;
-	// # of overlap in the chromosome: type (a) error
-	int Ovrlap = 0;
-	// # of the same professor teaching multiple courses at the same time in different rooms: type (b) error
-	int multi_c = 0;
-	// # of the courses of same series scheduled in the same time slot
-	int series_Overlap = 0;
-	// # of the case that does not fit the professors' preference time_slot
-	int prefer = 0;
-
-
-
-	// # of total rooms avaliable
-	int roomNum = get_room();
-	// # of total time slots
-	int col = get_time();
-	// # of courses, _chromosome is a private attribute 
-	int row = _chromosome.size();
-
-
-	// class_id_to_type()
-
-	// Table_Room is a 2D matrix, with its row idx as the course id and its column index as the time_slot id,
-	// if a course with id==x is schedule in time_slot id==y in room id==z, then Table_Room[x][y]==z. 
-	// this Table_Room is used to check room conflicts, meaning 2 courses schedule at the same time in the same room
-	vector<vector<int>> Table_Room(row, vector<int>(col, 0));
-
-	// multi_cMap record the professors' id as the key and the corresponding set of courses' time_slots is stored as the value
-	// this hash table is used in further check of the error that the same professor falsely scheduled with multiple 
-	// courses at the same time_slot
-	vector<unordered_set<int>> multi_cMap(get_professorNum(), unordered_set<int>{});
-	vector<unordered_set<int>> series_course(14, unordered_set<int>{});
-
-	for (int i = 0; i<(int)_chromosome.size(); i++) {
-
-		// compute the # of courses of same field scheduled in the same time slot
-		
-		int course_id = class_id_to_type(_chromosome[i]._class_id);
-
-		if (course_id >= 3000 && course_id < 6000) {
-			int type = (course_id / 10) % 10;
-			if (type < 7 && series_course[type].find(_chromosome[i]._time_slot) != series_course[type].end() ) {
-				series_Overlap += 1;
-			}
-			else if (type < 7 && series_course[type].find(_chromosome[i]._time_slot) == series_course[type].end()) {
-				series_course[type].insert(_chromosome[i]._time_slot);
-			}
-		}
-
-		if (course_id >= 5000) {
-			int type = (course_id / 10) % 10;
-			if (type < 7 && series_course[type+7].find(_chromosome[i]._time_slot) != series_course[type+7].end()) {
-				series_Overlap += 1;
-			}
-			else if (type < 7 && series_course[type + 7].find(_chromosome[i]._time_slot) == series_course[type + 7].end()) {
-				series_course[type+7].insert(_chromosome[i]._time_slot);
-			}
-		}
-
-
-		// note _time_slot starts from 1 to max
-		Table_Room[i][_chromosome[i]._time_slot - 1] = _chromosome[i]._room;
-
-		// check if the same professor has multiple courses to teach in the same semester
-		// if she does, then check if multiple different courses have been scheduled at the 
-		// same time_slot for her. 
-		if (multi_cMap[_chromosome[i]._professor_id].empty() != true) { // the same professor with another course
-																		// comparing the existing time_slots with the new time_slot for error (b)
-			if (multi_cMap[_chromosome[i]._professor_id].find(_chromosome[i]._time_slot) != multi_cMap[_chromosome[i]._professor_id].end())
-				multi_c += 1; // error type (b) found
-			else
-				multi_cMap[_chromosome[i]._professor_id].insert(_chromosome[i]._time_slot);
-		}
-		else { // a new professor found, insert <key,<course_id,time_slot>> pair 
-			multi_cMap[_chromosome[i]._professor_id].insert(_chromosome[i]._time_slot); // course id is gauranteed to be different 
-		}
-
-		// check the professors' preference 
-		unordered_set<int> preference = get_prof_preference(_chromosome[i]._professor_id);
-		if (preference.size() > 1 && preference.find(_chromosome[i]._time_slot) == preference.end())
-			prefer += 1;
-	}
-
-	
-	// input validation
-	if (Table_Room.empty() == true) {
-		cout << "error: empty Table_Room input" << endl;
-		// if the course time & room matrix is invalid, return -1
-		return fScore;
-	}
-
-	if (roomNum<1) {
-		cout << "error: invalid roomNum input" << endl;
-		// if the # of rooms is invalid, return -2
-		return (fScore - 1.0);
-	}
-
-	// # overlap error
-	for (int i = 0; i < col; i++) {
-		unordered_set<int> rooms;
-		for (int j = 0; j < row; j++) {
-			// Ovrlap += ((Table_Room[j][i] == Table_Room[j + 1][i]) && Table_Room[j][i] != 0) ? 1 : 0; 
-			// the above line can only find the adjacent overlap error
-
-			if (rooms.find(Table_Room[j][i]) != rooms.end()) {
-				Ovrlap++;
-				//cout << "overlap error in room--" << Table_Room[j][i] << endl;
-			}
-			else if (Table_Room[j][i] != 0)
-				rooms.insert(Table_Room[j][i]);
-
-		}
-	}
-
-	// if fScore == 1, then consider the fitness of professors' preference
-	fScore = (1.0 / (Ovrlap + multi_c + 1.0)) < 1.0 ? (1.0 / (Ovrlap + multi_c + 1.0)) : (1.0 + 1.0 / (1 + prefer + series_Overlap));
-
-	// linear fitness Score function
-	//fScore = 1.0 - double(Ovrlap + multi_c) / double(2*row);
-
-	return fScore;
-}
-*/
 
 
 // -------------------------------- fitness score ---------------------------------- //

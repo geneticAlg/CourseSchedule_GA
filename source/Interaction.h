@@ -10,9 +10,9 @@
 #include <queue>
 #include <unordered_set>
 #include <functional>
-#include<ctime>
+#include <ctime>
 
-
+#pragma once
 class Interaction
 {
 public:
