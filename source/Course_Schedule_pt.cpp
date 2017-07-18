@@ -30,12 +30,12 @@ int main()
 
 
 	// testcase file name: testcaseTry.txt
-	cout << "Please enter testcase dir: \n";
-	cin >> testCaseDir;
+	//cout << "Please enter testcase dir: \n";
+	//cin >> testCaseDir;
 
 
 	// test->init_from_text_file_v2("input_courses_from_Jingyue__simplified_Sp_config_MWF.txt");
-	test->init_from_text_file_v2(testCaseDir);
+	test->init_from_text_file_v2("testcaseTry.txt");
 
 	// intro of input parameters
 	int numOfChromosomes = 500;
