@@ -272,7 +272,7 @@ pair<int,int> Population::randSelect() {
 
 	return pair<int, int>{id1,id2};
 }
-
+/*
 int Population::binarySearch(vector<int> section, int idx) {
 	for (size_t i = 0; i<section.size(); i++) {
 		if (idx <= section[i] && i == 0)
@@ -283,6 +283,20 @@ int Population::binarySearch(vector<int> section, int idx) {
 	return section.size()-1; // in case brute force failed
 
 }
+*/
+
+// used to replace binarySearch() 
+/*
+int linearSearch(vector<int> section, int idx) {
+	for (size_t i = 0; i<section.size(); i++) {
+		if (idx <= section[i] && i == 0)
+			return i;
+		if (idx <= section[i] && section[i - 1]<idx)
+			return i;
+	}
+	return section.size() - 1; // in case brute force failed
+}
+*/
 
 int Population::binarySearchNew(vector<int> section, int idx, int range) {
 	if (section.empty())

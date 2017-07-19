@@ -31,7 +31,7 @@ int main()
 
 	// testcase file name: testcaseTry.txt
 	//cout << "Please enter testcase dir: \n";
-	//cin >> testCaseDir;
+	//cin >> testCaseDir;co
 
 
 	// test->init_from_text_file_v2("input_courses_from_Jingyue__simplified_Sp_config_MWF.txt");
