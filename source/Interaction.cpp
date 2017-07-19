@@ -14,7 +14,7 @@ using namespace std;
 
 Interaction::Interaction()
 {
-	kernel1 = new Population;
+	kernel1 = new Population;  // there's only one kernel
 }
 
 
@@ -424,11 +424,10 @@ int Interaction::get_the_number(string _s, int j)
 	return cnt;
 }
 
-
+// this function is reading the text configuration file input the database of this program
 void Interaction::init_from_text_file_v2(string _name)
 {
 	//initiation function from file stream
-	//the process is realized with stream, so the data is allocate line by line to save memory space
 	kernel1 = new Population;
 	//initiation new kernel1
 
@@ -443,7 +442,8 @@ void Interaction::init_from_text_file_v2(string _name)
 	string s;
 	// record read line
 
-	int type = -1; // type defines what kind of inition: time, professor, class, course, classroom
+	int type = -1; // type defines what kind of initalization: time, professor, class, course, classroom
+
 	vector<Interaction::course_time> time_rec;
 	int sub_count = -1; // record ONE single unit in config file, start with #start, end with #end
 
@@ -455,8 +455,8 @@ void Interaction::init_from_text_file_v2(string _name)
 	int type_num;  // record course type/ classroom type
 	vector<int> prefer_time; // record professor prefer time
 	int time_id;
-	int time_constrain;
-	vector<int> day_constrain = {};
+	int time_constraint;
+	vector<int> day_constraint = {}; // some courses are fixed on a specific day in week to 
 	int room_constrain;
 
 
@@ -507,9 +507,9 @@ void Interaction::init_from_text_file_v2(string _name)
 				{
 					//course_table[id] = name;
 					course_table[id] = to_string(id);
-					//kernel1->add_course(id, name, "", time_id, day_constrain, time_constrain,room_constrain); //professor name leave blank
-					kernel1->add_course(id, to_string(id), "", time_id, day_constrain, time_constrain, room_constrain); //professor name leave blank
-					day_constrain = {};								   // record one course
+					//kernel1->add_course(id, name, "", time_id, day_constraint, time_constraint,room_constrain); //professor name leave blank
+					kernel1->add_course(id, to_string(id), "", time_id, day_constraint, time_constraint, room_constrain); //professor name leave blank
+					day_constraint = {};								   // record one course
 				}
 				else if (type == 4)
 				{
@@ -552,8 +552,8 @@ void Interaction::init_from_text_file_v2(string _name)
 				if (_s.length() >= 4 && _s.substr(0, 4) == "time") time_id = get_the_number(_s, 5);
 				else if (_s.length() >= 10 && _s.substr(0, 10) == "department") name = _s.substr(11);//->7   //to_string(id); //leave that for now
 				else if (_s.length() >= 2 && _s.substr(0, 2) == "id") id = get_the_number(_s, 3);
-				else if (_s.length() >= 7 && _s.substr(0, 7) == "fix_day") day_constrain = get_prefer_time_from_string(_s.substr(8));
-				else if (_s.length() >= 8 && _s.substr(0, 8) == "fix_time") time_constrain = _s[9] == '-' ? -1:get_the_number(_s, 9);
+				else if (_s.length() >= 7 && _s.substr(0, 7) == "fix_day") day_constraint = get_prefer_time_from_string(_s.substr(8));
+				else if (_s.length() >= 8 && _s.substr(0, 8) == "fix_time") time_constraint = _s[9] == '-' ? -1:get_the_number(_s, 9);
 				else if (_s.length() >= 8 && _s.substr(0, 8) == "fix_room") room_constrain = _s[9] == '-' ? -1 : get_the_number(_s, 9);
 			}
 			else if (type == 4)          //CLASS

@@ -100,8 +100,7 @@ int Population::roomSizeOverlap(void) {
 	// set maxmum number of large and extralarge classroom at the same time
 	int largeMax = 2;
 	int extraMax = 1;
-
-	int largeNum = 0;
+	int largeNum = 0; 
 	int extraNum = 0;
 	unordered_map<int, unordered_set<int>> time_largeRoom;
 	unordered_map<int, unordered_set<int>> time_extraRoom;

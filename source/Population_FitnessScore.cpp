@@ -14,7 +14,7 @@ double Population::get_fitness_score(void) {
 	// # of the case that does not fit the professors' preference time_slot
 	int prefer = 0;
 
-	//  compare class volume and room capacity
+	//  compare class volume with room capacity
 	int rCapFit = 0;
 
 

@@ -35,7 +35,7 @@ int main()
 
 
 	// test->init_from_text_file_v2("input_courses_from_Jingyue__simplified_Sp_config_MWF.txt");
-	test->init_from_text_file_v2("testcaseTry.txt");
+	test->init_from_text_file_v2("input_AU_config_MWF.txt");
 
 	// intro of input parameters
 	int numOfChromosomes = 500;
