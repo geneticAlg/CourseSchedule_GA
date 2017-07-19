@@ -10,9 +10,37 @@ Schedule::Schedule()
 {
 }
 
-
+// need to delete all these elements in the tables in case of memory leak
 Schedule::~Schedule()
 {
+	Course *cPtr = &(_course_table.back());
+	Professor *pPtr = &(_professor_table.back());
+	Classroom *clPtr = &(_classroom_table.back());
+	Course_Class *ccPtr = &(_class_table.back());
+
+	for (size_t i = 0; i < _course_table.size(); i++) {
+		delete (cPtr);
+		_course_table.pop_back();
+		cPtr = &(_course_table.back());
+	}
+
+	for (size_t i = 0; i < _professor_table.size(); i++) {
+		delete (pPtr);
+		_professor_table.pop_back();
+		pPtr = &(_professor_table.back());
+	}
+
+	for (size_t i = 0; i < _classroom_table.size(); i++) {
+		delete (clPtr);
+		_classroom_table.pop_back();
+		clPtr = &(_classroom_table.back());
+	}
+
+	for (size_t i = 0; i < _class_table.size(); i++) {
+		delete (ccPtr);
+		_class_table.pop_back();
+		ccPtr = &(_class_table.back());
+	}
 }
 
 
