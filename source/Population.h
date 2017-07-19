@@ -174,7 +174,9 @@ private:
 
 	void mutateFun(vector<_case>& chromosome);
 
-	int binarySearch(vector<int> section, int idx);
+	//int binarySearch(vector<int> section, int idx);
+
+	//int linearSearch(vector<int> section, int idx);
 	
 	int binarySearchNew(vector<int> section, int idx, int range);
 
