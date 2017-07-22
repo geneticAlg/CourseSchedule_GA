@@ -101,12 +101,15 @@ int Interaction::start_evolution(int _group_size, int maxGeneration, double muta
 
 	int i = 0;
 	
+	// check whether the study field conflicts are avoidable
 	kernel1->area_conflict_check();
 
+	// randomly generate the 1st generation of chromosomes
+	// this function aims to intialize the population randomly 
+	// and reduce the study area conflicts as much as possible
 	kernel1->generate_init_group(_group_size);
 
-	
-	
+	// calculate the fitness score of the chromosomes
 	kernel1->update_group_fitness();
 
 	kernel1->printConflict();

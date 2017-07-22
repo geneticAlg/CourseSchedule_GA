@@ -70,7 +70,8 @@ vector<Population::_case> Population::get_random_chromosome()
 }
 
 
-
+// this function is used to initialize the chromosome such that
+// there is as less study area conflicts as possible
 vector<Population::_case> Population::get_random_chromosome_time(int _i)
 {
 	vector<int> _class_id = sch->get_class_id_list();

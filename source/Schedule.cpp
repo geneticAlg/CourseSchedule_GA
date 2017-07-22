@@ -214,6 +214,6 @@ vector<vector<int>> Schedule::field_type_conflict_check()
 		system("pause");
 		exit(-1);
 	}
-	cout << "cource basic field constrain: Check" << endl;
+	cout << "study field conflicts avoidability check: avoidable" << endl;
 	return { low_level_rec ,high_level_rec };
 }
