@@ -1,0 +1,1929 @@
+##TIME
+
+#start
+2 8:00~9:20
+2 9:35~10:55
+2 11:10~12:30
+2 12:45~14:05
+2 14:20~15:40
+2 15:55~17:15
+2 17:30~18:50
+#end
+
+##CLASSROOM
+
+#start
+room_name =DL-1
+room_id =1
+seats =50
+type = 0
+#end
+
+#start
+room_name =DL-2
+room_id =2
+seats =50
+type = 0
+#end
+
+#start
+room_name =DL-3
+room_id =3
+seats =50
+type = 0
+#end
+
+#start
+room_name =DL-4
+room_id =4
+seats =50
+type = 0
+#end
+
+#start
+room_name =DL-5
+room_id =5
+seats =50
+type = 0
+#end
+
+#start
+room_name =DL-6
+room_id =6
+seats =50
+type = 0
+#end
+
+#start
+room_name =DL-7
+room_id =7
+seats =50
+type = 0
+#end
+
+#start
+room_name =DL-8
+room_id =8
+seats =50
+type = 0
+#end
+
+#start
+room_name =DL-9
+room_id =9
+seats =50
+type = 0
+#end
+
+#start
+room_name =DL-10
+room_id =10
+seats =50
+type = 0
+#end
+
+#start
+room_name =DL-11
+room_id =11
+seats =50
+type = 0
+#end
+
+#start
+room_name =DL-12
+room_id =12
+seats =50
+type = 0
+#end
+
+#start
+room_name =DL-13
+room_id =13
+seats =50
+type = 0
+#end
+
+#start
+room_name =DL-14
+room_id =14
+seats =50
+type = 0
+#end
+
+#start
+room_name =DL-15
+room_id =15
+seats =50
+type = 0
+#end
+
+#start
+room_name =DL-16
+room_id =16
+seats =50
+type = 0
+#end
+
+#start
+room_name =DL-17
+room_id =17
+seats =50
+type = 0
+#end
+
+#start
+room_name =DL-18
+room_id =18
+seats =50
+type = 0
+#end
+
+#start
+room_name =DL-19
+room_id =19
+seats =50
+type = 0
+#end
+
+#start
+room_name =DL-20
+room_id =20
+seats =50
+type = 0
+#end
+
+#start
+room_name =DL-21
+room_id =21
+seats =50
+type = 0
+#end
+
+#start
+room_name =DL-22
+room_id =22
+seats =50
+type = 0
+#end
+
+#start
+room_name =DL-23
+room_id =23
+seats =50
+type = 0
+#end
+
+#start
+room_name =DL-24
+room_id =24
+seats =50
+type = 0
+#end
+
+#start
+room_name =DL-25
+room_id =25
+seats =50
+type = 0
+#end
+
+#start
+room_name =DL-26
+room_id =26
+seats =50
+type = 0
+#end
+
+#start
+room_name =DL-27
+room_id =27
+seats =50
+type = 0
+#end
+
+#start
+room_name =DL-28
+room_id =28
+seats =50
+type = 0
+#end
+
+#start
+room_name =DL-29
+room_id =29
+seats =50
+type = 0
+#end
+
+#start
+room_name =DL-30
+room_id =30
+seats =50
+type = 0
+#end
+
+#start
+room_name =DL-31
+room_id =31
+seats =50
+type = 0
+#end
+
+#start
+room_name =DL-32
+room_id =32
+seats =50
+type = 0
+#end
+
+#start
+room_name =DL-33
+room_id =33
+seats =50
+type = 0
+#end
+
+#start
+room_name =DL-34
+room_id =34
+seats =50
+type = 0
+#end
+
+#start
+room_name =DL-35
+room_id =35
+seats =50
+type = 0
+#end
+
+#start
+room_name =DL-36
+room_id =36
+seats =50
+type = 0
+#end
+
+#start
+room_name =DL-37
+room_id =37
+seats =50
+type = 0
+#end
+
+#start
+room_name =DL-38
+room_id =38
+seats =50
+type = 0
+#end
+
+#start
+room_name =DL-39
+room_id =39
+seats =50
+type = 0
+#end
+
+#start
+room_name =DL-40
+room_id =40
+seats =50
+type = 0
+#end
+
+#start
+room_name =DL-41
+room_id =41
+seats =50
+type = 0
+#end
+
+#start
+room_name =DL-42
+room_id =42
+seats =50
+type = 0
+#end
+
+#start
+room_name =DL-43
+room_id =43
+seats =50
+type = 0
+#end
+
+#start
+room_name =DL-44
+room_id =44
+seats =50
+type = 0
+#end
+
+#start
+room_name =DL-45
+room_id =45
+seats =50
+type = 0
+#end
+
+#start
+room_name =DL-46
+room_id =46
+seats =50
+type = 0
+#end
+
+#start
+room_name =DL-47
+room_id =47
+seats =50
+type = 0
+#end
+
+#start
+room_name =DL-48
+room_id =48
+seats =50
+type = 0
+#end
+
+#start
+room_name =DL-49
+room_id =49
+seats =50
+type = 0
+#end
+
+#start
+room_name =DL-50
+room_id =50
+seats =50
+type = 0
+#end
+
+#start
+room_name =DL-51
+room_id =51
+seats =50
+type = 0
+#end
+
+#start
+room_name =DL-52
+room_id =52
+seats =50
+type = 0
+#end
+
+#start
+room_name =DL-53
+room_id =53
+seats =50
+type = 0
+#end
+
+#start
+room_name =DL-54
+room_id =54
+seats =50
+type = 0
+#end
+
+#start
+room_name =DL-55
+room_id =55
+seats =50
+type = 0
+#end
+
+#start
+room_name =DL-56
+room_id =56
+seats =50
+type = 0
+#end
+
+#start
+room_name =DL-57
+room_id =57
+seats =50
+type = 0
+#end
+
+#start
+room_name =DL-58
+room_id =58
+seats =50
+type = 0
+#end
+
+#start
+room_name =DL-59
+room_id =59
+seats =50
+type = 0
+#end
+
+#start
+room_name =DL-60
+room_id =60
+seats =50
+type = 0
+#end
+
+##COURSE
+
+#start
+id =2021
+department =ECE
+time =2
+fix_day = {}
+fix_time =-1
+fix_room =-1
+#end
+
+#start
+id =2060
+department =ECE
+time =2
+fix_day = {}
+fix_time =-1
+fix_room =-1
+#end
+
+#start
+id =2300
+department =ECE
+time =2
+fix_day = {}
+fix_time =-1
+fix_room =-1
+#end
+
+#start
+id =2560
+department =ECE
+time =2
+fix_day = {}
+fix_time =-1
+fix_room =-1
+#end
+
+#start
+id =3010
+department =ECE
+time =2
+fix_day = {}
+fix_time =-1
+fix_room =-1
+#end
+
+#start
+id =3027
+department =ECE
+time =2
+fix_day = {}
+fix_time =-1
+fix_room =-1
+#end
+
+#start
+id =3040
+department =ECE
+time =2
+fix_day = {}
+fix_time =-1
+fix_room =-1
+#end
+
+#start
+id =3047
+department =ECE
+time =2
+fix_day = {}
+fix_time =-1
+fix_room =-1
+#end
+
+#start
+id =3551
+department =ECE
+time =2
+fix_day = {}
+fix_time =-1
+fix_room =-1
+#end
+
+#start
+id =3557
+department =ECE
+time =2
+fix_day = {}
+fix_time =-1
+fix_room =-1
+#end
+
+#start
+id =5012
+department =ECE
+time =2
+fix_day = {}
+fix_time =-1
+fix_room =-1
+#end
+
+#start
+id =5013
+department =ECE
+time =2
+fix_day = {}
+fix_time =-1
+fix_room =-1
+#end
+
+#start
+id =5027
+department =ECE
+time =2
+fix_day = {}
+fix_time =-1
+fix_room =-1
+#end
+
+#start
+id =5031
+department =ECE
+time =2
+fix_day = {}
+fix_time =-1
+fix_room =-1
+#end
+
+#start
+id =5041
+department =ECE
+time =2
+fix_day = {}
+fix_time =-1
+fix_room =-1
+#end
+
+#start
+id =5043
+department =ECE
+time =2
+fix_day = {}
+fix_time =-1
+fix_room =-1
+#end
+
+#start
+id =5137
+department =ECE
+time =2
+fix_day = {}
+fix_time =-1
+fix_room =-1
+#end
+
+#start
+id =5206
+department =ECE
+time =2
+fix_day = {}
+fix_time =-1
+fix_room =-1
+#end
+
+#start
+id =5227
+department =ECE
+time =2
+fix_day = {}
+fix_time =-1
+fix_room =-1
+#end
+
+#start
+id =5362
+department =ECE
+time =2
+fix_day = {}
+fix_time =-1
+fix_room =-1
+#end
+
+#start
+id =5554
+department =ECE
+time =2
+fix_day = {}
+fix_time =-1
+fix_room =-1
+#end
+
+#start
+id =5557
+department =ECE
+time =2
+fix_day = {}
+fix_time =-1
+fix_room =-1
+#end
+
+#start
+id =6070
+department =ECE
+time =2
+fix_day = {}
+fix_time =-1
+fix_room =-1
+#end
+
+#start
+id =6102
+department =ECE
+time =2
+fix_day = {}
+fix_time =-1
+fix_room =-1
+#end
+
+#start
+id =6532
+department =ECE
+time =2
+fix_day = {}
+fix_time =-1
+fix_room =-1
+#end
+
+#start
+id =6541
+department =ECE
+time =2
+fix_day = {}
+fix_time =-1
+fix_room =-1
+#end
+
+#start
+id =7001
+department =ECE
+time =2
+fix_day = {}
+fix_time =-1
+fix_room =-1
+#end
+
+#start
+id =7010
+department =ECE
+time =2
+fix_day = {}
+fix_time =-1
+fix_room =-1
+#end
+
+#start
+id =7020
+department =ECE
+time =2
+fix_day = {}
+fix_time =-1
+fix_room =-1
+#end
+
+#start
+id =7531
+department =ECE
+time =2
+fix_day = {}
+fix_time =-1
+fix_room =-1
+#end
+
+#start
+id =7850
+department =ECE
+time =2
+fix_day = {}
+fix_time =-1
+fix_room =-1
+#end
+
+#start
+id =7868
+department =ECE
+time =2
+fix_day = {}
+fix_time =-1
+fix_room =-1
+#end
+
+#start
+id =8019
+department =ECE
+time =2
+fix_day = {}
+fix_time =-1
+fix_room =-1
+#end
+
+#start
+id =8250
+department =ECE
+time =2
+fix_day = {}
+fix_time =-1
+fix_room =-1
+#end
+
+#start
+id =8891
+department =ECE
+time =2
+fix_day = {}
+fix_time =-1
+fix_room =-1
+#end
+
+##INSTRUCTOR
+
+#start
+name =A
+id =0
+prefertime = {}
+#end
+
+#start
+name =B
+id =1
+prefertime = {}
+#end
+
+#start
+name =C
+id =2
+prefertime = {}
+#end
+
+#start
+name =D
+id =3
+prefertime = {}
+#end
+
+#start
+name =E
+id =4
+prefertime = {}
+#end
+
+#start
+name =F
+id =5
+prefertime = {}
+#end
+
+#start
+name =G
+id =6
+prefertime = {}
+#end
+
+#start
+name =H
+id =7
+prefertime = {}
+#end
+
+#start
+name =I
+id =8
+prefertime = {}
+#end
+
+#start
+name =J
+id =9
+prefertime = {}
+#end
+
+#start
+name =K
+id =10
+prefertime = {}
+#end
+
+#start
+name =L
+id =11
+prefertime = {}
+#end
+
+#start
+name =M
+id =12
+prefertime = {}
+#end
+
+#start
+name =N
+id =13
+prefertime = {}
+#end
+
+#start
+name =O
+id =14
+prefertime = {}
+#end
+
+#start
+name =P
+id =15
+prefertime = {}
+#end
+
+#start
+name =Q
+id =16
+prefertime = {}
+#end
+
+#start
+name =R
+id =17
+prefertime = {}
+#end
+
+#start
+name =S
+id =18
+prefertime = {}
+#end
+
+#start
+name =T
+id =19
+prefertime = {}
+#end
+
+#start
+name =U
+id =20
+prefertime = {}
+#end
+
+#start
+name =V
+id =21
+prefertime = {}
+#end
+
+#start
+name =W
+id =22
+prefertime = {}
+#end
+
+#start
+name =X
+id =23
+prefertime = {}
+#end
+
+#start
+name =Y
+id =24
+prefertime = {}
+#end
+
+#start
+name =Z
+id =25
+prefertime = {}
+#end
+
+#start
+name =AA
+id =26
+prefertime = {}
+#end
+
+#start
+name =AB
+id =27
+prefertime = {}
+#end
+
+#start
+name =AC
+id =28
+prefertime = {}
+#end
+
+#start
+name =AD
+id =29
+prefertime = {}
+#end
+
+#start
+name =AE
+id =30
+prefertime = {}
+#end
+
+#start
+name =AF
+id =31
+prefertime = {}
+#end
+
+#start
+name =AG
+id =32
+prefertime = {}
+#end
+
+#start
+name =AH
+id =33
+prefertime = {}
+#end
+
+#start
+name =AI
+id =34
+prefertime = {}
+#end
+
+#start
+name =AJ
+id =35
+prefertime = {}
+#end
+
+#start
+name =AK
+id =36
+prefertime = {}
+#end
+
+#start
+name =AL
+id =37
+prefertime = {}
+#end
+
+#start
+name =AM
+id =38
+prefertime = {}
+#end
+
+#start
+name =AN
+id =39
+prefertime = {}
+#end
+
+#start
+name =AO
+id =40
+prefertime = {}
+#end
+
+#start
+name =AP
+id =41
+prefertime = {}
+#end
+
+#start
+name =AQ
+id =42
+prefertime = {}
+#end
+
+#start
+name =AR
+id =43
+prefertime = {}
+#end
+
+#start
+name =AS
+id =44
+prefertime = {}
+#end
+
+#start
+name =AT
+id =45
+prefertime = {}
+#end
+
+#start
+name =AU
+id =46
+prefertime = {}
+#end
+
+#start
+name =AV
+id =47
+prefertime = {}
+#end
+
+#start
+name =AW
+id =48
+prefertime = {}
+#end
+
+#start
+name =AX
+id =49
+prefertime = {}
+#end
+
+#start
+name =AY
+id =50
+prefertime = {}
+#end
+
+#start
+name =AZ
+id =51
+prefertime = {}
+#end
+
+#start
+name =BA
+id =52
+prefertime = {}
+#end
+
+#start
+name =BB
+id =53
+prefertime = {}
+#end
+
+#start
+name =BC
+id =54
+prefertime = {}
+#end
+
+#start
+name =BD
+id =55
+prefertime = {}
+#end
+
+#start
+name =BE
+id =56
+prefertime = {}
+#end
+
+#start
+name =BF
+id =57
+prefertime = {}
+#end
+
+#start
+name =BG
+id =58
+prefertime = {}
+#end
+
+#start
+name =BH
+id =59
+prefertime = {}
+#end
+
+#start
+name =BI
+id =60
+prefertime = {}
+#end
+
+#start
+name =BJ
+id =61
+prefertime = {}
+#end
+
+#start
+name =BK
+id =62
+prefertime = {}
+#end
+
+#start
+name =BL
+id =63
+prefertime = {}
+#end
+
+#start
+name =BM
+id =64
+prefertime = {}
+#end
+
+#start
+name =BN
+id =65
+prefertime = {}
+#end
+
+#start
+name =BO
+id =66
+prefertime = {}
+#end
+
+#start
+name =BP
+id =67
+prefertime = {}
+#end
+
+#start
+name =BQ
+id =68
+prefertime = {}
+#end
+
+#start
+name =BR
+id =69
+prefertime = {}
+#end
+
+#start
+name =BS
+id =70
+prefertime = {}
+#end
+
+#start
+name =BT
+id =71
+prefertime = {}
+#end
+
+#start
+name =BU
+id =72
+prefertime = {}
+#end
+
+#start
+name =BV
+id =73
+prefertime = {}
+#end
+
+#start
+name =BW
+id =74
+prefertime = {}
+#end
+
+#start
+name =BX
+id =75
+prefertime = {}
+#end
+
+#start
+name =BY
+id =76
+prefertime = {}
+#end
+
+#start
+name =BZ
+id =77
+prefertime = {}
+#end
+
+#start
+name =CA
+id =78
+prefertime = {}
+#end
+
+#start
+name =CB
+id =79
+prefertime = {}
+#end
+
+#start
+name =CC
+id =80
+prefertime = {}
+#end
+
+#start
+name =CD
+id =81
+prefertime = {}
+#end
+
+#start
+name =CE
+id =82
+prefertime = {}
+#end
+
+#start
+name =CF
+id =83
+prefertime = {}
+#end
+
+#start
+name =CG
+id =84
+prefertime = {}
+#end
+
+#start
+name =CH
+id =85
+prefertime = {}
+#end
+
+#start
+name =CI
+id =86
+prefertime = {}
+#end
+
+#start
+name =CJ
+id =87
+prefertime = {}
+#end
+
+#start
+name =CK
+id =88
+prefertime = {}
+#end
+
+#start
+name =CL
+id =89
+prefertime = {}
+#end
+
+#start
+name =CM
+id =90
+prefertime = {}
+#end
+
+#start
+name =CN
+id =91
+prefertime = {}
+#end
+
+#start
+name =CO
+id =92
+prefertime = {}
+#end
+
+#start
+name =CP
+id =93
+prefertime = {}
+#end
+
+#start
+name =CQ
+id =94
+prefertime = {}
+#end
+
+#start
+name =CR
+id =95
+prefertime = {}
+#end
+
+#start
+name =CS
+id =96
+prefertime = {}
+#end
+
+#start
+name =CT
+id =97
+prefertime = {}
+#end
+
+#start
+name =CU
+id =98
+prefertime = {}
+#end
+
+#start
+name =CV
+id =99
+prefertime = {}
+#end
+
+#start
+name =CW
+id =100
+prefertime = {}
+#end
+
+#start
+name =CX
+id =101
+prefertime = {}
+#end
+
+#start
+name =CY
+id =102
+prefertime = {}
+#end
+
+#start
+name =CZ
+id =103
+prefertime = {}
+#end
+
+#start
+name =DA
+id =104
+prefertime = {}
+#end
+
+#start
+name =DB
+id =105
+prefertime = {}
+#end
+
+#start
+name =DC
+id =106
+prefertime = {}
+#end
+
+#start
+name =DD
+id =107
+prefertime = {}
+#end
+
+#start
+name =DE
+id =108
+prefertime = {}
+#end
+
+#start
+name =DF
+id =109
+prefertime = {}
+#end
+
+#start
+name =DG
+id =110
+prefertime = {}
+#end
+
+#start
+name =DH
+id =111
+prefertime = {}
+#end
+
+#start
+name =DI
+id =112
+prefertime = {}
+#end
+
+#start
+name =DJ
+id =113
+prefertime = {}
+#end
+
+#start
+name =DK
+id =114
+prefertime = {}
+#end
+
+#start
+name =DL
+id =115
+prefertime = {}
+#end
+
+#start
+name =DM
+id =116
+prefertime = {}
+#end
+
+#start
+name =DN
+id =117
+prefertime = {}
+#end
+
+#start
+name =DO
+id =118
+prefertime = {}
+#end
+
+#start
+name =DP
+id =119
+prefertime = {}
+#end
+
+#start
+name =DQ
+id =120
+prefertime = {}
+#end
+
+#start
+name =DR
+id =121
+prefertime = {}
+#end
+
+#start
+name =DS
+id =122
+prefertime = {}
+#end
+
+#start
+name =DT
+id =123
+prefertime = {}
+#end
+
+#start
+name =DU
+id =124
+prefertime = {}
+#end
+
+#start
+name =DV
+id =125
+prefertime = {}
+#end
+
+#start
+name =DW
+id =126
+prefertime = {}
+#end
+
+#start
+name =DX
+id =127
+prefertime = {}
+#end
+
+#start
+name =DY
+id =128
+prefertime = {}
+#end
+
+#start
+name =DZ
+id =129
+prefertime = {}
+#end
+
+#start
+name =EA
+id =130
+prefertime = {}
+#end
+
+#start
+name =EB
+id =131
+prefertime = {}
+#end
+
+#start
+name =EC
+id =132
+prefertime = {}
+#end
+
+#start
+name =ED
+id =133
+prefertime = {}
+#end
+
+#start
+name =EE
+id =134
+prefertime = {}
+#end
+
+#start
+name =EF
+id =135
+prefertime = {}
+#end
+
+#start
+name =EG
+id =136
+prefertime = {}
+#end
+
+#start
+name =EH
+id =137
+prefertime = {}
+#end
+
+#start
+name =EI
+id =138
+prefertime = {}
+#end
+
+#start
+name =EJ
+id =139
+prefertime = {}
+#end
+
+#start
+name =EK
+id =140
+prefertime = {}
+#end
+
+#start
+name =EL
+id =141
+prefertime = {}
+#end
+
+#start
+name =EM
+id =142
+prefertime = {}
+#end
+
+#start
+name =EN
+id =143
+prefertime = {}
+#end
+
+#start
+name =EO
+id =144
+prefertime = {}
+#end
+
+#start
+name =EP
+id =145
+prefertime = {}
+#end
+
+#start
+name =EQ
+id =146
+prefertime = {}
+#end
+
+#start
+name =ER
+id =147
+prefertime = {}
+#end
+
+#start
+name =ES
+id =148
+prefertime = {}
+#end
+
+##CLASS
+
+#start
+id =20102
+course_id =2021
+professor_id =1
+students_num =80
+type = 0
+#end
+
+#start
+id =20105
+course_id =2060
+professor_id =4
+students_num =80
+type = 0
+#end
+
+#start
+id =20111
+course_id =2300
+professor_id =8
+students_num =80
+type = 0
+#end
+
+#start
+id =20112
+course_id =2560
+professor_id =9
+students_num =80
+type = 0
+#end
+
+#start
+id =30101
+course_id =3010
+professor_id =10
+students_num =80
+type = 0
+#end
+
+#start
+id =30103
+course_id =3027
+professor_id =12
+students_num =80
+type = 0
+#end
+
+#start
+id =30105
+course_id =3040
+professor_id =14
+students_num =80
+type = 0
+#end
+
+#start
+id =30106
+course_id =3047
+professor_id =15
+students_num =80
+type = 0
+#end
+
+#start
+id =30110
+course_id =3551
+professor_id =19
+students_num =80
+type = 0
+#end
+
+#start
+id =30111
+course_id =3557
+professor_id =20
+students_num =80
+type = 0
+#end
+
+#start
+id =50105
+course_id =5012
+professor_id =28
+students_num =80
+type = 0
+#end
+
+#start
+id =50106
+course_id =5013
+professor_id =29
+students_num =80
+type = 0
+#end
+
+#start
+id =50112
+course_id =5027
+professor_id =34
+students_num =80
+type = 0
+#end
+
+#start
+id =50114
+course_id =5031
+professor_id =35
+students_num =80
+type = 0
+#end
+
+#start
+id =50117
+course_id =5041
+professor_id =38
+students_num =80
+type = 0
+#end
+
+#start
+id =50119
+course_id =5043
+professor_id =40
+students_num =80
+type = 0
+#end
+
+#start
+id =50127
+course_id =5137
+professor_id =48
+students_num =80
+type = 0
+#end
+
+#start
+id =50130
+course_id =5206
+professor_id =50
+students_num =80
+type = 0
+#end
+
+#start
+id =50132
+course_id =5227
+professor_id =52
+students_num =80
+type = 0
+#end
+
+#start
+id =50134
+course_id =5362
+professor_id =54
+students_num =80
+type = 0
+#end
+
+#start
+id =50145
+course_id =5554
+professor_id =65
+students_num =80
+type = 0
+#end
+
+#start
+id =50146
+course_id =5557
+professor_id =66
+students_num =80
+type = 0
+#end
+
+#start
+id =60103
+course_id =6070
+professor_id =72
+students_num =80
+type = 0
+#end
+
+#start
+id =60105
+course_id =6102
+professor_id =74
+students_num =80
+type = 0
+#end
+
+#start
+id =60113
+course_id =6532
+professor_id =79
+students_num =80
+type = 0
+#end
+
+#start
+id =60114
+course_id =6541
+professor_id =80
+students_num =80
+type = 0
+#end
+
+#start
+id =70101
+course_id =7001
+professor_id =84
+students_num =80
+type = 0
+#end
+
+#start
+id =70104
+course_id =7010
+professor_id =87
+students_num =80
+type = 0
+#end
+
+#start
+id =70107
+course_id =7020
+professor_id =90
+students_num =80
+type = 0
+#end
+
+#start
+id =70114
+course_id =7531
+professor_id =97
+students_num =80
+type = 0
+#end
+
+#start
+id =70123
+course_id =7850
+professor_id =106
+students_num =80
+type = 0
+#end
+
+#start
+id =70131
+course_id =7868
+professor_id =114
+students_num =80
+type = 0
+#end
+
+#start
+id =80102
+course_id =8019
+professor_id =116
+students_num =80
+type = 0
+#end
+
+#start
+id =80109
+course_id =8250
+professor_id =120
+students_num =80
+type = 0
+#end
+
+#start
+id =80112
+course_id =8891
+professor_id =123
+students_num =80
+type = 0
+#end
+
