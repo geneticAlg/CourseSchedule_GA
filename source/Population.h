@@ -156,7 +156,7 @@ public:
 		t_ind_conv();
 	}
 
-	void class_capcity_check() {
+	void class_capacity_check() {
 		sch->classCapacityCheck(125, 250);
 	}
 	

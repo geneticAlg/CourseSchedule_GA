@@ -236,7 +236,7 @@ bool Schedule::classCapacityCheck(int large, int xlarge) {
 
 	int res = true;
 	if (double(numOfLarge) / double(time_cap) > 2.0) {
-		cout << "Initial check of the class capcity:\n";
+		cout << "Initial check of the class capacity:\n";
 		cout << "The number of classes that requires large rooms: ";
 		cout << numOfLarge << " exceeds twice of the number of total time slots: ";
 		cout << time_cap << endl;
@@ -245,7 +245,7 @@ bool Schedule::classCapacityCheck(int large, int xlarge) {
 	}
 		
 	if (double(numOfXLarge) / double(time_cap) > 1.0) {
-		cout << "Initial check of the class capcity:\n";
+		cout << "Initial check of the class capacity:\n";
 		cout << "The number of classes that requires large rooms: ";
 		cout << numOfXLarge << " exceeds the number of total time slots: ";
 		cout << time_cap << endl;
@@ -254,10 +254,10 @@ bool Schedule::classCapacityCheck(int large, int xlarge) {
 	}
 
 	if (res) {
-		cout << "Initial check of the class capcity done.\n";
+		cout << "Initial check of the class capacity done.\n";
 	}
 	else {
-		cout << "force quit due to classCapcityCheck failed." << endl;
+		cout << "force quit due to classCapacityCheck failed." << endl;
 		system("pause");
 		exit(-1);
 	}

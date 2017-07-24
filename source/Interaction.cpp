@@ -105,7 +105,7 @@ int Interaction::start_evolution(int _group_size, int maxGeneration, double muta
 	kernel1->study_area_conflict_check();
 
 	// check whether the # of large and xlarge class are too many 
-	kernel1->class_capcity_check();
+	kernel1->class_capacity_check();
 
 
 	// randomly generate the 1st generation of chromosomes
