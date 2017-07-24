@@ -177,7 +177,7 @@ vector<int> Schedule::get_class_id_list()
 }
 
 
-vector<vector<int>> Schedule::field_type_conflict_check()
+vector<vector<int>> Schedule::study_area_conflict_check()
 {
 	vector<int> low_level_rec(7, 0);
 	vector<int> high_level_rec(7, 0);
@@ -216,4 +216,51 @@ vector<vector<int>> Schedule::field_type_conflict_check()
 	}
 	cout << "study field conflicts avoidability check: avoidable" << endl;
 	return { low_level_rec ,high_level_rec };
+}
+
+// check if the number of classes that need xlarge room 
+// is greater that the number of total time slots
+// return true if nothing's wrong
+bool Schedule::classCapacityCheck(int large, int xlarge) {
+	// total time slots ? I learnt it from study_area_conflict_check()
+	int time_cap = _time_table.size() - 1; 
+	int numOfLarge = 0, numOfXLarge = 0;
+	for (size_t i = 0; i < _class_table.size(); i++) {
+		if (_class_table[i].get_class_cap() >= xlarge) {
+			numOfXLarge++;
+		}
+		else if (_class_table[i].get_class_cap() >= large) {
+			numOfLarge++;
+		}
+	}
+
+	int res = true;
+	if (double(numOfLarge) / double(time_cap) > 2.0) {
+		cout << "Initial check of the class capcity:\n";
+		cout << "The number of classes that requires large rooms: ";
+		cout << numOfLarge << " exceeds twice of the number of total time slots: ";
+		cout << time_cap << endl;
+		cout << "Impossible to achieve advanced constraint #4, forced to quit.\n";
+		res = false;
+	}
+		
+	if (double(numOfXLarge) / double(time_cap) > 1.0) {
+		cout << "Initial check of the class capcity:\n";
+		cout << "The number of classes that requires large rooms: ";
+		cout << numOfXLarge << " exceeds the number of total time slots: ";
+		cout << time_cap << endl;
+		cout << "Impossible to achieve advanced constraint #5, forced to quit.\n";
+		res = false;
+	}
+
+	if (res) {
+		cout << "Initial check of the class capcity done.\n";
+	}
+	else {
+		cout << "force quit due to classCapcityCheck failed." << endl;
+		system("pause");
+		exit(-1);
+	}
+
+	return res;
 }

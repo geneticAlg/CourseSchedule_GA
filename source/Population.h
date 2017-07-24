@@ -148,11 +148,18 @@ public:
 
 	int get_room_cap_by_index(int _real_room_id) { return sch->get_room_cap_by_id(_real_room_id); }
 
-	void area_conflict_check() { 
-		time_index_generator = sch->field_type_conflict_check();
+	void study_area_conflict_check() { 
+		// study_area_conflict_check() result (time_index_generator) 
+		// is used for later initialization of population
+		time_index_generator = sch->study_area_conflict_check();
 		rand_time_index = { 0,0,0,0,0,0,0,0,0,0,0,0,0,0 };
 		t_ind_conv();
 	}
+
+	void class_capcity_check() {
+		sch->classCapacityCheck(125, 250);
+	}
+	
 
 	int roomSizeStudNumConflicts();
 	//get class size by class id 

@@ -30,8 +30,13 @@ public:
 	void add_classroom(int _id, int _seats = 50, int _type = 1);
 	void set_time(int slots);
 	void add_class(int _class_id, string course, string professor, int cap, int type_num);
-	// initial check of unsolvable conflict
-	vector<vector<int>> field_type_conflict_check();
+	
+	// initial check of unsolvable conflicts
+	// #1 study area conflicts check
+	vector<vector<int>> study_area_conflict_check();
+
+	// #2 class capacity checks
+	bool classCapacityCheck(int large, int xlarge);
 
 	inline int get_time_size() { return (int)_time_table.size(); }
 
@@ -106,11 +111,11 @@ public:
 	}
 
 private:
-	vector<Course> _course_table;
+	vector<Course> _course_table;  // this table is most not used
 	vector<Professor> _professor_table;
 	vector<Classroom> _classroom_table;
 	vector<int> _time_table;
-	vector<Course_Class> _class_table;
+	vector<Course_Class> _class_table; // _professor_id, _class_capacity
 
 	unordered_map<string, int> _professor_id_check;  // check the professor ID by name
 	unordered_map<string, int> _course_id_check; //check the course ID by name
