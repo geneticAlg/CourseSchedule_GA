@@ -246,7 +246,7 @@ bool Schedule::classCapacityCheck(int large, int xlarge) {
 		
 	if (double(numOfXLarge) / double(time_cap) > 1.0) {
 		cout << "Initial check of the class capacity:\n";
-		cout << "The number of classes that requires large rooms: ";
+		cout << "The number of classes that requires extra large rooms: ";
 		cout << numOfXLarge << " exceeds the number of total time slots: ";
 		cout << time_cap << endl;
 		cout << "Impossible to achieve advanced constraint #5, forced to quit.\n";

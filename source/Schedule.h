@@ -38,6 +38,9 @@ public:
 	// #2 class capacity checks
 	bool classCapacityCheck(int large, int xlarge);
 
+	// #3 class capacity and room size comparison
+	// bool classCapacityRoomSizeComp();
+
 	inline int get_time_size() { return (int)_time_table.size(); }
 
 	vector<vector<int>> get_schedule();
