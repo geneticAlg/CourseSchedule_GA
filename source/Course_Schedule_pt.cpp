@@ -24,7 +24,7 @@ using namespace std;
 
 int main() {
 
-	string inputDir1 = "input_withpreference_AU_config_MWF.txt";
+	string inputDir1 = "input_AU_config_MWF.txt";
 	string outputDir1 = inputDir1.substr(0, inputDir1.size() - 4) + "_sln.txt";
 	// test case "input_Sp_config_MWF.txt" is not solvable
 	//string inputDir2 = "input_Sp_config_MWF.txt";

@@ -17,4 +17,4 @@
 using namespace std;
 
 //int reproduceFun(Population *p, int maxGeneration, double mutationRate, double fitSCore_goal);
-int reproduceFun(Population *p, int maxGeneration, double mutationRate, double fitScore_goal, double perX, double perY);
+int reproduceFun(Population *p, int maxGeneration, double mutationRate, double fitScore_goal, double perX, double perY, bool enPrintOutLog);

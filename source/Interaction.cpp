@@ -96,7 +96,7 @@ void Interaction::add_classis(vector<int> class_id, vector<string> course_name, 
 
 
 
-int Interaction::start_evolution(int _group_size, int maxGeneration, double mutationRate, double fitSCore_goal, double perX, double perY)
+int Interaction::start_evolution(int _group_size, int maxGeneration, double mutationRate, double fitSCore_goal, double perX, double perY, bool enPrintOutLog)
 {
 
 	int i = 0;
@@ -118,7 +118,7 @@ int Interaction::start_evolution(int _group_size, int maxGeneration, double muta
 
 	kernel1->printConflict();
 
-	int index = reproduceFun(kernel1, maxGeneration, mutationRate, fitSCore_goal, perX, perY);
+	int index = reproduceFun(kernel1, maxGeneration, mutationRate, fitSCore_goal, perX, perY, enPrintOutLog);
 	
 	kernel1->update_group_fitness();
 	
@@ -444,7 +444,7 @@ void Interaction::init_from_text_file_v2(string _name)
 	//open file 
 
 	int line_rec = 0;
-	// track read line for error messeging output
+	// track read line for error messaging output
 
 	string s;
 	// record read line

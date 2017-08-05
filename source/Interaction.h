@@ -37,7 +37,7 @@ public:
 
 	void init_from_text_file_v2(string _name);//init from file directly
 
-	int start_evolution(int _group_size, int maxGeneration, double mutationRate, double fitSCore_goal, double perX, double perY);
+	int start_evolution(int _group_size, int maxGeneration, double mutationRate, double fitSCore_goal, double perX, double perY, bool enPrintOutLog = true);
 
 	void print_valid_table(int index);
 

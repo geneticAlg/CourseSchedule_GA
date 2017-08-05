@@ -33,7 +33,7 @@ vector<vector<Population::_case>> passDown(size_t X, size_t Y, vector<vector<Pop
 // overloaded function
 // perX represents the percentage of high fScore chromosomes from previous generation were selected to pass to next generation to keep high fScores 
 // perY represents the percentage of low fScoure chromosomes from previous generation were selected to pass to next generation to keep diversity
-int reproduceFun(Population *p, int maxGeneration, double mutationRate, double fitScore_goal,double perX, double perY) {
+int reproduceFun(Population *p, int maxGeneration, double mutationRate, double fitScore_goal,double perX, double perY, bool enPrintOutLog) {
 	
 												 
 	// perZ represents the percentage of new chromosomes generated through matingFun()
@@ -62,10 +62,6 @@ int reproduceFun(Population *p, int maxGeneration, double mutationRate, double f
 		vector<double> prevFScore = p->get_group_fitness(); // previous generation's fScore
 		vector<vector<Population::_case>> prevGene = p->get_whole_group(); // previous generation's chromosome_base
 		vector<vector<Population::_case>> newGene;  // new generation
-		
-		
-		
-
 
 		for (int i = 0; i < selectNum; i++) {
 			// randomized selection
@@ -116,8 +112,9 @@ int reproduceFun(Population *p, int maxGeneration, double mutationRate, double f
 		p->_max_group_fitness_index = max_index_rec; 
 		// causing the next line broke
 		p->update_max_score_chrome();
-
-		p->printConflict();
+		if (enPrintOutLog == true) {
+			p->printConflict();
+		}
 
 		cout << "generation #--: " << itr << "highest fitness score in this generation--:" << scoreMax << endl;
 
