@@ -1,0 +1,1 @@
+added preferences to the test case to increase the difficulty of the task
