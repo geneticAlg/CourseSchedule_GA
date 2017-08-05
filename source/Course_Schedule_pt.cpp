@@ -18,6 +18,7 @@
 #include <ctime>
 #include "Interaction.h"
 
+#include "batchSchedule.h"
 
 using namespace std;
 
@@ -26,16 +27,11 @@ int main()
 {
 
 	Interaction *test = new Interaction;
-	string testCaseDir;
-
-
-	// testcase file name: testcaseTry.txt
-	//cout << "Please enter testcase dir: \n";
-	//cin >> testCaseDir;co
-
-
+	string inputDir = "input_AU_config_MWF.txt";
+	string outputDir = inputDir.substr(0, inputDir.size() - 4) + "_sln.txt";
+	ParametersMap pMap(inputDir,outputDir);
 	// test->init_from_text_file_v2("input_courses_from_Jingyue__simplified_Sp_config_MWF.txt");
-	test->init_from_text_file_v2("input_AU_config_MWF.txt");
+	test->init_from_text_file_v2(inputDir);
 
 	// intro of input parameters
 	int numOfChromosomes = 500;
@@ -46,8 +42,9 @@ int main()
 	double percentOfWorstFit = 0.05;
 	int i1 = test->start_evolution(numOfChromosomes, maximumGenerations, mutationRate, fitness_score_goal, percentOfBestFit, percentOfWorstFit);
 
+	
 	test->print_valid_table(i1);
-	test->write_to_file(1, i1, "test_output");
+	test->write_to_file(1, i1, outputDir);
 	test->print_to_console(i1);
 
 	//test->one_line_initiation("configuration.txt", 200, 1000, 0.3, 2.0, 0.2, 0.05);
