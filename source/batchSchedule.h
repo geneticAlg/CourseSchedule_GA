@@ -16,4 +16,5 @@ struct ParametersMap {
 	~ParametersMap() {}	
 };
 
+void batchScheduling(const vector<ParametersMap> pMaps, const int numOfSlnPerCase = 1);
 

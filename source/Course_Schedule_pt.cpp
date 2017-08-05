@@ -22,6 +22,27 @@
 
 using namespace std;
 
+int main() {
+
+	string inputDir1 = "input_withpreference_AU_config_MWF.txt";
+	string outputDir1 = inputDir1.substr(0, inputDir1.size() - 4) + "_sln.txt";
+	// test case "input_Sp_config_MWF.txt" is not solvable
+	//string inputDir2 = "input_Sp_config_MWF.txt";
+	//string outputDir2 = inputDir2.substr(0, inputDir2.size() - 4) + "_sln.txt";
+	vector<ParametersMap> pMaps;
+	pMaps.push_back(ParametersMap(inputDir1, outputDir1));
+	//pMaps.push_back(ParametersMap(inputDir2, outputDir2));
+	batchScheduling(pMaps);
+	cout << endl;
+	system("pause");
+	return 666;
+
+}
+
+
+
+
+/*
 
 int main()
 {
@@ -30,6 +51,7 @@ int main()
 	string inputDir = "input_AU_config_MWF.txt";
 	string outputDir = inputDir.substr(0, inputDir.size() - 4) + "_sln.txt";
 	ParametersMap pMap(inputDir,outputDir);
+	pMap.numOfChromosomes = 600;
 	// test->init_from_text_file_v2("input_courses_from_Jingyue__simplified_Sp_config_MWF.txt");
 	test->init_from_text_file_v2(inputDir);
 
@@ -47,17 +69,11 @@ int main()
 	test->write_to_file(1, i1, outputDir);
 	test->print_to_console(i1);
 
-	//test->one_line_initiation("configuration.txt", 200, 1000, 0.3, 2.0, 0.2, 0.05);
 
-/*
-	ofstream myfile;
-	myfile.open("example.txt"); 
-	myfile << "Writing this to a file.\n";
-	myfile.close();
-	*/
-
+	cout << endl;
 	system("pause");
 	return 0;
 }
 
 
+*/

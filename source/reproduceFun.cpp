@@ -3,18 +3,14 @@
 #include <utility>
 
 
-vector<vector<Population::_case>> passDown(double perX, double perY, vector<vector<Population::_case>> prevGene, vector<double>& prevFScore) {
+vector<vector<Population::_case>> passDown(size_t X, size_t Y, vector<vector<Population::_case>> prevGene, vector<double>& prevFScore) {
 	vector<pair<double, size_t>> fScore_idx;
 
 	for (size_t i = 0; i<prevFScore.size(); i++) {
 		fScore_idx.push_back(pair<double, size_t>{prevFScore[i], i});
 	}
 	sort(fScore_idx.begin(), fScore_idx.end(), [](pair<double, size_t> a, pair<double, size_t> b) {return (a.first > b.first) ? 1 : 0; });
-
-	double len = double(fScore_idx.size());
-	size_t X = size_t(perX*len);
-	size_t Y = size_t(perY*len);
-
+	
 	vector<vector<Population::_case>> oldChromo;
 	vector<double> oldFscore;
 
@@ -41,12 +37,25 @@ int reproduceFun(Population *p, int maxGeneration, double mutationRate, double f
 	
 												 
 	// perZ represents the percentage of new chromosomes generated through matingFun()
-	double perZ = 1 - (perX + perY);
+	double pSize = double(p->get_population_size());
+	size_t X = size_t(pSize*perX);
+	size_t Y = size_t(pSize*perY);
+	size_t totlNum = p->get_population_size();
+	int selectNum;
+	if ((totlNum - X - Y) % 2 != 0) {
+		X++;
+		selectNum = (int) (totlNum - X - Y) / 2;
+	}
+	else {
+		selectNum = (int) (totlNum - X - Y) / 2;
+	}
+	
+	
 
 	int itr = 0;
 	// idx of the solution chromosome in the base.
 	int slnIdx = -1;
-	
+	double scoreMax = 0.0;
 	while (itr<maxGeneration) {
 		
 		itr++;
@@ -55,13 +64,15 @@ int reproduceFun(Population *p, int maxGeneration, double mutationRate, double f
 		vector<vector<Population::_case>> newGene;  // new generation
 		
 		
-		double pSize = double(p->get_population_size());
-		int selectNum = int ( (pSize*perZ) / 2);
+		
+
+
 		for (int i = 0; i < selectNum; i++) {
 			// randomized selection
 			srand((int)time(0)+i);
-			
+			// get chromosome indices w.r.t the _chromosome_base 
 			pair<int, int> tp1 = p->randSelect();
+
 			// mating + mutation
 
 			vector<vector<Population::_case>> tp2;
@@ -81,7 +92,7 @@ int reproduceFun(Population *p, int maxGeneration, double mutationRate, double f
 		// fitness test connect_fScore, 
 		p->update_group_fitness();
 
-		vector<vector<Population::_case>> tpp = passDown(perX, perY, prevGene, prevFScore);
+		vector<vector<Population::_case>> tpp = passDown(X, Y, prevGene, prevFScore);
 		newGene.insert(newGene.end(), tpp.begin(), tpp.end());
 		
 		p->update_chromosome_base(newGene);
@@ -90,10 +101,10 @@ int reproduceFun(Population *p, int maxGeneration, double mutationRate, double f
 
 
 		vector<double> gpfitScore = p->get_group_fitness();
-		double scoreMax = (double)INT_MIN;
+		
 		int max_index_rec = -1;
 		for (size_t i = 0; i < gpfitScore.size(); i++) {
-			if (scoreMax < gpfitScore[i]) {
+			if (scoreMax <= gpfitScore[i]) {
 				slnIdx = i;
 				scoreMax = gpfitScore[i];
 				max_index_rec = (int)i;
@@ -101,8 +112,11 @@ int reproduceFun(Population *p, int maxGeneration, double mutationRate, double f
 		}
 
 		p->_max_group_fitness = scoreMax;
-		p->_max_group_fitness_index = max_index_rec;
+		// this _max_group_fitness_index is out of range in the 2nd run
+		p->_max_group_fitness_index = max_index_rec; 
+		// causing the next line broke
 		p->update_max_score_chrome();
+
 		p->printConflict();
 
 		cout << "generation #--: " << itr << "highest fitness score in this generation--:" << scoreMax << endl;
@@ -119,6 +133,7 @@ int reproduceFun(Population *p, int maxGeneration, double mutationRate, double f
 
 	if (itr == maxGeneration) {
 		cout << "quit reproduction due to reach of max generation" << endl;
+		cout << "current higest fitness score: " << scoreMax << endl;
 		cout << endl;
 	}
 
