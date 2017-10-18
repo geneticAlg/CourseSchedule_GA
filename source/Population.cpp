@@ -201,9 +201,11 @@ void Population::update_group_fitness()
 	for (int i = 0; i < len; ++i)
 	{
 		_chromosome = _chromosome_base[i];
-		group_fitness[i] = get_fitness_score();
-		//parallel version
-		//group_fitness[i] = get_fitness_score_parallel();
+		//group_fitness[i] = get_fitness_score(); // single thread
+
+		// using multiple threads to calculate violations of each constraint
+		group_fitness[i] = get_fitness_score_multithread(); 
+		
 	}
 	return;
 }
@@ -216,6 +218,7 @@ vector<vector<Population::_case>> Population::pick_random_chromosom()
 	int pk2 = rand() % _chromosome_base.size();
 	return { _chromosome_base[pk1], _chromosome_base[pk2] };
 }
+
 
 pair<int,int> Population::randSelect() {
 	vector<double> gp_fitScore = get_group_fitness();
@@ -273,31 +276,7 @@ pair<int,int> Population::randSelect() {
 
 	return pair<int, int>{id1,id2};
 }
-/*
-int Population::binarySearch(vector<int> section, int idx) {
-	for (size_t i = 0; i<section.size(); i++) {
-		if (idx <= section[i] && i == 0)
-			return i;
-		if (idx <= section[i] && section[i - 1]<idx)
-			return i;
-	}
-	return section.size()-1; // in case brute force failed
 
-}
-*/
-
-// used to replace binarySearch() 
-/*
-int linearSearch(vector<int> section, int idx) {
-	for (size_t i = 0; i<section.size(); i++) {
-		if (idx <= section[i] && i == 0)
-			return i;
-		if (idx <= section[i] && section[i - 1]<idx)
-			return i;
-	}
-	return section.size() - 1; // in case brute force failed
-}
-*/
 
 int Population::binarySearchNew(vector<int> section, int idx, int range) {
 	if (section.empty())
@@ -328,10 +307,12 @@ int Population::binarySearchNew(vector<int> section, int idx, int range) {
 	int itr = 0;
 	while (low < high) {
 		itr++;
+		// an exception should be throw instead.
 		if (itr>itrMax) {
 			cout << "sth is wrong with current binary search, switch to brute force search" << endl;
 			break;
 		}
+
 		if (high < section.size() && section[low] == section[high])
 		{
 			return high;
@@ -356,6 +337,7 @@ int Population::binarySearchNew(vector<int> section, int idx, int range) {
 	return section.size() - 1; // in case brute force failed
 }
 
+
 void Population::print_schedule(vector<Population::_case> sch, int _time_s)
 {
 	int room_num = get_room();
@@ -379,15 +361,18 @@ void Population::print_schedule(vector<Population::_case> sch, int _time_s)
 	cout << get_fitness_score() << endl;
 }
 
+
 void Population::set_prof_preference(int prof_id, vector<int> _time)
 {
 	sch->set_prof_preference(prof_id, _time);
 }
 
+
 unordered_set<int> Population::get_prof_preference(int prof_id)
 {
 	return sch->get_prof_preference(prof_id);
 }
+
 
 void Population::printConflict(vector<Population::_case>_chromosome) {
 	// 4 types of things to check 
@@ -535,8 +520,6 @@ void Population::printConflict(vector<Population::_case>_chromosome) {
 	fclose(pFile);
 	return;
 }
-
-
 
 
 void Population::printConflict() {
@@ -734,13 +717,10 @@ void Population::printConflict() {
 }
 
 
-
-
 void one_line_initiation(string _file_name, int _group_size, int _max_gen, double _mute_rate, double _standard, double _save, double _switch_rate)
 {
 
 }
-
 
 
 void Population::t_ind_conv()

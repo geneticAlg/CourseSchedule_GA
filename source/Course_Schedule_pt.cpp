@@ -17,7 +17,6 @@
 #include <functional>
 #include <ctime>
 #include "Interaction.h"
-
 #include "batchSchedule.h"
 
 using namespace std;

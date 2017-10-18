@@ -19,6 +19,7 @@ public:
 	Interaction();
 	~Interaction();
 
+	// initialize private variable time_slots
 	void init_time(vector<int> start_hour, vector<int> start_min, vector<int> end_hour, vector<int> end_min, vector<int> days);
 
 	vector<int> prefer_time_conv(vector<int> start_hour, vector<int> start_min, vector<int> end_hour, vector<int> end_min, vector<int> days);
@@ -39,19 +40,22 @@ public:
 
 	int start_evolution(int _group_size, int maxGeneration, double mutationRate, double fitSCore_goal, double perX, double perY, bool enPrintOutLog = true);
 
+	// for development purpose, not currently used in the program.
 	void print_valid_table(int index);
 
 	void set_prof_perference(int prof_id, vector<int> perference);
 
 	void write_to_file(int _day, int i,string file_name);
 
+	// print the arragement of each case in _chromosome_base[i] line by line 
+	// to the console.
 	void print_to_console(int i);
 
 	//void one_line_initiation(string _file_name, int _group_size, int _max_gen, double _mute_rate, double _standard, double _save, double _switch_rate);
 
 private:
-	Population *kernel1;
-	Population *kernel2;
+	Population *kernel1;  // Monday-Wednesday-Friday
+	Population *kernel2; // Tuesday-Thursday
 
 
 	struct course_time
@@ -66,7 +70,8 @@ private:
 			end_hour(c), end_minutes(d), day(e){}
 	};
 
-	vector<course_time> time_slots;
+	// generic & standard time slots (e.g. MWF 8:10~9:50)
+	vector<course_time> time_slots; 
 
 	unordered_map<int, string> room_table;
 	unordered_map<int, string> prof_table;

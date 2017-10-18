@@ -3,6 +3,7 @@
 #include "Interaction.h"
 
 struct ParametersMap {
+	
 	string inputDir;
 	string outputDir;
 	int numOfChromosomes = 500;
@@ -12,6 +13,8 @@ struct ParametersMap {
 	double percentOfBestFit = 0.05;
 	double percentOfWorstFit = 0.05;
 	bool enableOutputLog = true;
+
+	
 	ParametersMap(string iDir, string oDir): inputDir(iDir),outputDir(oDir) {}
 	~ParametersMap() {}	
 };

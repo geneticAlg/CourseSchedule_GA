@@ -4,19 +4,21 @@ double Population::get_fitness_score(void) {
 
 	// default fitness score set to be -1
 	double fScore = -1.0;
+
+	// ----- conflicts that needs to be count -------------------------------------- //
+
 	// # of the same professor teaching multiple courses at the same time in different rooms: type (b) error
-	int multi_c = 0;
-	// # of overlap in the chromosome: type (a) error
-	int Ovrlap = 0;
-
-	// # of the courses of same series scheduled in the same time slot
-	int series_Overlap = 0;
-	// # of the case that does not fit the professors' preference time_slot
-	int prefer = 0;
-
-	//  compare class volume with room capacity
-	int rCapFit = 0;
-
+	int score_multiCourseConflict = 0;
+	// # of the same room been scheduled multiple courses at the same time slot
+	int score_roomOverlap = 0;
+	// # of the courses of same area scheduled in the same time slot
+	int score_studyAreaConflicts = 0;
+	// # of the course that does not fit the professors' preference time_slots
+	int score_preferenceConflicts = 0;
+	// # of the classes scheduled to a classroom of insuficient capacity
+	int score_roomSizeStudNumConflicts = 0;
+	// # of the large or extra large class that vilates the constraints
+	int score_roomSizeOverlap = 0;
 
 	// # of total rooms avaliable
 	int roomNum = get_room();
@@ -51,13 +53,13 @@ double Population::get_fitness_score(void) {
 
 	for (int i = 0; i<(int)_chromosome.size(); i++) {
 
-		// --------------------- series_Overlap ---------------------------------
+		// --------------------- score_studyAreaConflicts ---------------------------------
 		// compute the # of courses of same field scheduled in the same time slot
 		int course_id = class_id_to_type(_chromosome[i]._class_id);
 		if (course_id >= 3000 && course_id < 6000) {
 			int type = (course_id / 10) % 10;
 			if (type < 7 && series_course[type].find(_chromosome[i]._time_slot) != series_course[type].end()) {
-				series_Overlap += 1;
+				score_studyAreaConflicts += 1;
 			}
 			else if (type < 7 && series_course[type].find(_chromosome[i]._time_slot) == series_course[type].end()) {
 				series_course[type].insert(_chromosome[i]._time_slot);
@@ -67,7 +69,7 @@ double Population::get_fitness_score(void) {
 		if (course_id >= 5000) {
 			int type = (course_id / 10) % 10;
 			if (type < 7 && series_course[type + 7].find(_chromosome[i]._time_slot) != series_course[type + 7].end()) {
-				series_Overlap += 1;
+				score_studyAreaConflicts += 1;
 			}
 			else if (type < 7 && series_course[type + 7].find(_chromosome[i]._time_slot) == series_course[type + 7].end()) {
 				series_course[type + 7].insert(_chromosome[i]._time_slot);
@@ -86,27 +88,38 @@ double Population::get_fitness_score(void) {
 		}
 		else {
 			if (multi_cMap[_chromosome[i]._professor_id].find(_chromosome[i]._time_slot) != multi_cMap[_chromosome[i]._professor_id].end())
-				multi_c += 1;
+				score_multiCourseConflict += 1;
 			else
 				multi_cMap[_chromosome[i]._professor_id].insert(_chromosome[i]._time_slot);
 		}
 
+		/*
+		if (_chromosome[i]._room == 48) {
+			cout << "idx: " << i << " has room: 48\n";
+		}
+		*/
+
+		// -------------------------- score_roomOverlap --------------------------------------
 		if (time_room.find(_chromosome[i]._time_slot) == time_room.end()) {
 			time_room[_chromosome[i]._time_slot].insert(_chromosome[i]._room);
 		}
 		else {
 			if (time_room[_chromosome[i]._time_slot].find(_chromosome[i]._room) != time_room[_chromosome[i]._time_slot].end())
-				Ovrlap += 1;
+			{
+				score_roomOverlap += 1;
+				//cout << "idx: " << i << endl;
+				//cout << "time_room[_chromosome[i]._time_slot]: " <<
+			}
 			else
 				time_room[_chromosome[i]._time_slot].insert(_chromosome[i]._room);
 		}
 
 
-		// ---------------------------------- prefer --------------------------------------------------
+		// ---------------------------------- score_preferenceConflicts --------------------------------------------------
 		// check the professors' preference 
 		unordered_set<int> preference = get_prof_preference(_chromosome[i]._professor_id);
 		if (preference.size() > 1 && preference.find(_chromosome[i]._time_slot) == preference.end())
-			prefer += 1;
+			score_preferenceConflicts += 1;
 
 
 		// ----------------------------- roomSizeConstraints ------------------------------------------
@@ -132,18 +145,18 @@ double Population::get_fitness_score(void) {
 			}
 		}
 		
-		// -------------------------------- rCapFit -----------------------------------------------
+		// -------------------------------- score_roomSizeStudNumConflicts -----------------------------------------------
 		// return the num of students in this class
 		int classVolume = getStudNum_by_classIdx(_chromosome[i]._class_id);
 		// return the num of avaliable seats in this room 
 		int roomCap = get_room_cap_by_index(_chromosome[i]._room);
 		if (classVolume>roomCap) {
-			rCapFit += 1;
+			score_roomSizeStudNumConflicts += 1;
 		}
 
 	}
 	// large & xlarge roomSize constraints
-	int roomSizeConstraints = (largeNum > largeMax ? (largeNum - largeMax) : 0) + (extraNum > extraMax ? (extraNum - extraMax) : 0);
+	score_roomSizeOverlap = (largeNum > largeMax ? (largeNum - largeMax) : 0) + (extraNum > extraMax ? (extraNum - extraMax) : 0);
 
 
 	
@@ -160,7 +173,7 @@ double Population::get_fitness_score(void) {
 
 
 	// if fScore == 1, then consider the fitness of professors' preference
-	fScore = (1.0 / (Ovrlap + multi_c + rCapFit + 1.0)) < 1.0 ? (1.0 / (Ovrlap + multi_c + rCapFit + 1.0)) : (1.0 + 1.0 / (1 + prefer + series_Overlap + roomSizeConstraints));
+	fScore = (1.0 / (score_roomOverlap + score_multiCourseConflict + score_roomSizeStudNumConflicts + 1.0)) < 1.0 ? (1.0 / (score_roomOverlap + score_multiCourseConflict + score_roomSizeStudNumConflicts + 1.0)) : (1.0 + 1.0 / (1 + score_preferenceConflicts + score_studyAreaConflicts + score_roomSizeOverlap));
 
 	// linear fitness Score function
 	// fScore = 1.0 - double(Ovrlap + multi_c) / double(2*row);

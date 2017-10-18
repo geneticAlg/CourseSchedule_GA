@@ -94,17 +94,31 @@ public:
 	double get_fitness_score(void);
 
 	// get fitness parallel
-	double get_fitness_score_parallel(void);
-	int studyAreaConflicts(void);
-	int preferenceConflicts(void);
-	int multiCourseConflict(void);
-	int roomOverlap(void);
-	int roomSizeOverlap(void);
+	//double get_fitness_score_parallel(void);
+	double get_fitness_score_multithread(void);
 
+	//int studyAreaConflicts(void);
+	void studyAreaConflicts(const vector<_case>& _chrom, int& numOfConflicts); // multi thread functor
+
+	//int preferenceConflicts(void);
+	void preferenceConflicts(const vector<_case>& _chrom, int& prefer); // multi thread functor
+
+	//int multiCourseConflict(void);
+	void multiCourseConflict(const vector<_case>& _chrom, int& multi_c); // multi thread functor
+	
+	//int roomOverlap(void);
+	void roomOverlap(const vector<_case>& _chrom, int& Ovrlap); // multi thread functor
+
+	//int roomSizeOverlap(void);
+	void roomSizeOverlap(const vector<_case>& _chrom, int& score); // multi thread functor
+
+	//int roomSizeStudNumConflicts(void);
+	void roomSizeStudNumConflicts(const vector<_case>& _chrom, int&numOfConflicts); // multi thread functor
+	// get fitness parallel
 
 	vector<vector<_case>> matingFun(int id1, int id2, double _mutationRate);
 
-	vector<vector<_case>> Population::matingFun(int id1, int id2, double _mutationRate, double fScore);
+	vector<vector<_case>> matingFun(int id1, int id2, double _mutationRate, double fScore);
 
 	vector<vector<_case>> pick_random_chromosom();
 
@@ -161,7 +175,7 @@ public:
 	}
 	
 
-	int roomSizeStudNumConflicts();
+	
 	//get class size by class id 
 	inline int getStudNum_by_classIdx(int _class_id) {return sch->get_class_size_by_id(_class_id);}
 
@@ -180,10 +194,6 @@ private:
 	vector<int> gene_index;
 
 	void mutateFun(vector<_case>& chromosome);
-
-	//int binarySearch(vector<int> section, int idx);
-
-	//int linearSearch(vector<int> section, int idx);
 	
 	int binarySearchNew(vector<int> section, int idx, int range);
 

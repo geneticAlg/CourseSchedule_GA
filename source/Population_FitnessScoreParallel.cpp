@@ -1,5 +1,5 @@
 #include "Population.h"
-
+/*
 // ------------------------------- fitness score parallel ---------------------------//
 double Population::get_fitness_score_parallel(void)
 {
@@ -151,3 +151,5 @@ int Population::roomSizeStudNumConflicts(void) {
 	}
 	return numOfConflicts;
 }
+
+*/
